@@ -18,5 +18,8 @@ A solution to the SuperMarketPlusPlusExercise
    * From this point onward, i will be using TDD to drive the design and creation of the classes.
 
 ## Step 4
-
    * Created tests for the Regular Updater classes with all the egde cases in the business requirement
+
+## Step 5
+   * I will add the implementation for the SulfurasUpdater with test accompanying. I am adding test even though the update method has no logic in it because the test describe the expect behaviour of this updater. They can also be used to enforce that the behaviour of this class does not change if they are used properly as a quality gate.
+   * I will also be adding another test to the RegularUpdaterTest class to enforce that the quality does not exceed 50.
