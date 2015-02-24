@@ -26,3 +26,11 @@ A solution to the SuperMarketPlusPlusExercise
 
 ## Step 6
    * I will create the tests for the Aged Brie class and it's implementation
+   * I corrected the test for the RegularUpdater by using Hamcrest "greaterThan" instead of assertEquals, it closer to the desired behaviour
+   * I will be removing the business case for the RegularUpdaterTest which enforces that quality does not exceed 50, the business requirements does not state that regular items will increase in quality so this edge case is not required.
+   * I wlil be adding a missing test case for Sulfaras where the quality should not exceed 80
+
+## Step 7
+   *   
+   * I will be removing the business case for the AgedBrie and BackStagePasses Updaters which enforces that quality does not fall below 0, the business requirements does not state that regular items will decrease in quality so this edge case is not required.
+   

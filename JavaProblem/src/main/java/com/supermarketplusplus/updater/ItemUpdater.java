@@ -7,5 +7,7 @@ import com.supermarketplusplus.model.Item;
  */
 public interface ItemUpdater {
 
+    int NO_QUALITY_LEFT = 0;
+
     void update(Item item);
 }
