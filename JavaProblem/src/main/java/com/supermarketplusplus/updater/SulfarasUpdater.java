@@ -8,6 +8,6 @@ import com.supermarketplusplus.model.Item;
 public class SulfarasUpdater implements ItemUpdater{
     @Override
     public void update(Item item) {
-
+        //Does nothing as Sulfaras does not lose quality or sellIn duration
     }
 }

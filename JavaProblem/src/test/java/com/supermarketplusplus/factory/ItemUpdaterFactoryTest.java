@@ -54,7 +54,7 @@ public class ItemUpdaterFactoryTest {
         ItemUpdater updater = itemUpdaterFactory.getUpdater(item.getName());
 
         //Then
-        assertThat(updater, is(instanceOf(OrganicBananasUpdater.class)));
+        assertThat(updater, is(instanceOf(OrganicBananaUpdater.class)));
     }
 
     @Test

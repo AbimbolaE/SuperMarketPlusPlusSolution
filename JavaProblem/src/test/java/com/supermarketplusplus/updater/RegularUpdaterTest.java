@@ -72,15 +72,4 @@ public class RegularUpdaterTest {
         assertEquals(8, expiredYesterday.getQuality());
     }
 
-    @Test
-    public void should_not_increase_the_quality_of_the_regularItem_beyond_50() {
-        //Given
-        Item regularItem = new Item("SomethingRegular", 10, 50);
-
-        //When
-        regularUpdater.update(regularItem);
-
-        //Then
-        assertThat(regularItem.getQuality(), lessThan(50));
-    }
 }

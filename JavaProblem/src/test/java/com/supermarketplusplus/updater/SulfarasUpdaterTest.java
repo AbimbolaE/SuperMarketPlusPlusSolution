@@ -21,24 +21,36 @@ public class SulfarasUpdaterTest {
     @Test
     public void should_not_decrease_the_quality_of_sulfuras() {
         //Given
-        Item item = new Item("Sulfuras", 10, 10);
+        Item sulfuras = new Item("Sulfuras", 10, 10);
 
         //When
-        sulfarasUpdater.update(item);
+        sulfarasUpdater.update(sulfuras);
 
         //Then
-        assertEquals(10, item.getQuality());
+        assertEquals(10, sulfuras.getQuality());
     }
 
     @Test
     public void should_not_decrease_the_sellIn_duration_of_sulfuras() {
         //Given
-        Item item = new Item("Sulfuras", 10, 10);
+        Item sulfuras = new Item("Sulfuras", 10, 10);
 
         //When
-        sulfarasUpdater.update(item);
+        sulfarasUpdater.update(sulfuras);
 
         //Then
-        assertEquals(10, item.getSellIn());
+        assertEquals(10, sulfuras.getSellIn());
+    }
+
+    @Test
+    public void should_not_increase_the_quality_of_sulfuras_beyond_50() {
+        //Given
+        Item sulfuras = new Item("Sulfuras", 10, 80);
+
+        //When
+        sulfarasUpdater.update(sulfuras);
+
+        //Then
+        assertEquals(80, sulfuras.getQuality());
     }
 }

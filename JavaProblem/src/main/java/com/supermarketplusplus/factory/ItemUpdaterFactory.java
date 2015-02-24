@@ -13,7 +13,7 @@ public class ItemUpdaterFactory {
         if (itemName.toLowerCase().equals("aged brie")){
             itemUpdater = new AgedBrieUpdater();
         } else if(itemName.toLowerCase().equals("organic banana")) {
-            itemUpdater = new OrganicBananasUpdater();
+            itemUpdater = new OrganicBananaUpdater();
         } else if(itemName.toLowerCase().equals("sulfuras")) {
             itemUpdater = new SulfarasUpdater();
         } else if(itemName.toLowerCase().equals("backstage passes")) {
