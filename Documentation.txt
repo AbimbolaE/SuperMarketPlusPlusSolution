@@ -11,3 +11,6 @@ A solution to the SuperMarketPlusPlusExercise
    * An ideal solution will be to leverage the features of Java and use a simple interface (ItemUpdater) which exposes a single method "update". This method should take an Item and update this Item with the appropriate strategy depending on what type of Item it is.
    * The reason I am choosing an interface over an abstract class and subtypes is simple. Although, the five types have some common features in terms of attributes, their behaviour in terms of being updated is very specific and there is no strong relationship between them (Some increase in quality over time, another decreases only, another increases and decreases). So an interface with a common method with different implementations is more suitable
    * I will start by creating the interface and a it's four implementations (Regular, Sulfaras, BackstagePasses, AgedBrie and OrganicBananas.
+   * Also, the Item.class is in the default package which means it cannot be imported or used in other clases. I will move it to another package called "Model" so I can import and use it without modifying it's content. Otherwise, a wrapper class will be needed to use it which is not a solution leading to cleaner code.
+
+## Step 3
