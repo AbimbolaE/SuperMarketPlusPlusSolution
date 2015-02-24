@@ -1,4 +1,4 @@
-package model;
+package com.supermarketplusplus.model;
 
 public class Item {
     public String name;

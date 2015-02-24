@@ -1,4 +1,4 @@
-import model.Item;
+import com.supermarketplusplus.model.Item;
 
 import java.util.ArrayList;
 import java.util.List;
