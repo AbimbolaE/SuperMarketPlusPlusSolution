@@ -4,6 +4,7 @@ import com.supermarketplusplus.model.Item;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -53,7 +54,7 @@ public class RegularUpdaterTest {
         regularUpdater.update(regularItem);
 
         //Then
-        assertEquals(0, regularItem.getQuality());
+        assertThat(regularItem.getQuality(), greaterThan(-1));
     }
 
     @Test

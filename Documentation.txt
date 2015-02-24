@@ -23,3 +23,6 @@ A solution to the SuperMarketPlusPlusExercise
 ## Step 5
    * I will add the implementation for the SulfurasUpdater with test accompanying. I am adding test even though the update method has no logic in it because the test describe the expect behaviour of this updater. They can also be used to enforce that the behaviour of this class does not change if they are used properly as a quality gate.
    * I will also be adding another test to the RegularUpdaterTest class to enforce that the quality does not exceed 50.
+
+## Step 6
+   * I will create the tests for the Aged Brie class and it's implementation
