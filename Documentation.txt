@@ -16,5 +16,7 @@ A solution to the SuperMarketPlusPlusExercise
 ## Step 3
    * I will be using a Factory class to seperate the instantiation of the object graph from the actual business logic. This factory will produce instances of the ItemUpdater interface given the name of an Item. I won't pass the actual Item in because that wouldn't be strictly following the Law of Demeter code-wise.
    * From this point onward, i will be using TDD to drive the design and creation of the classes.
-   * I will also be adding the Hamcrest library (1.3) as a test dependency for assertions and verifications.
-   * JUnit 4.11 comes with the hamcrest core as a transitive dependecy so, I will be excluding it from the JUnit dependency and import explicitly as a seperate dependency
+
+## Step 4
+
+   * Created tests for the Regular Updater classes with all the egde cases in the business requirement
