@@ -1,4 +1,6 @@
+import com.supermarketplusplus.factory.ItemUpdaterFactory;
 import com.supermarketplusplus.model.Item;
+import com.supermarketplusplus.updater.ItemUpdater;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,7 @@ public class SuperMarketPlusPlus {
         items.add(new Item("Sulfuras", 0, 80));
         items.add(new Item("Backstage Passes", 15, 20));
         items.add(new Item("Ginger Cake", 3, 6));
+        items.add(new Item("Organic Banana", 10, 26));
 
         updateQuality();
 }
@@ -30,78 +33,25 @@ public class SuperMarketPlusPlus {
 	
     public static void updateQuality()
     {
-        for (int i = 0; i < items.size(); i++)
+        ItemUpdaterFactory itemUpdaterFactory = new ItemUpdaterFactory();
+        ItemUpdater updater = null;
+        for (Item item : items)
         {
-            if ((!"Aged Brie".equals(items.get(i).getName())) && !"Backstage Passes".equals(items.get(i).getName())) 
-            {
-                if (items.get(i).getQuality() > 0)
-                {
-                    if (!"Sulfuras".equals(items.get(i).getName()))
-                    {
-                        items.get(i).setQuality(items.get(i).getQuality() - 1);
-                    }
-                }
-            }
-            else
-            {
-                if (items.get(i).getQuality() < 50)
-                {
-                    items.get(i).setQuality(items.get(i).getQuality() + 1);
+            System.out.println("Before: ");
+            printItemState(item);
 
-                    if ("Backstage Passes".equals(items.get(i).getName()))
-                    {
-                        if (items.get(i).getSellIn() < 11)
-                        {
-                            if (items.get(i).getQuality() < 50)
-                            {
-                                items.get(i).setQuality(items.get(i).getQuality() + 1);
-                            }
-                        }
+            updater = itemUpdaterFactory.getUpdater(item.name);
+            updater.update(item);
 
-                        if (items.get(i).getSellIn() < 6)
-                        {
-                            if (items.get(i).getQuality() < 50)
-                            {
-                                items.get(i).setQuality(items.get(i).getQuality() + 1);
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (!"Sulfuras".equals(items.get(i).getName()))
-            {
-                items.get(i).setSellIn(items.get(i).getSellIn() - 1);
-            }
-
-            if (items.get(i).getSellIn() < 0)
-            {
-                if (!"Aged Brie".equals(items.get(i).getName()))
-                {
-                    if (!"Backstage Passes".equals(items.get(i).getName()))
-                    {
-                        if (items.get(i).getQuality() > 0)
-                        {
-                            if (!"Sulfuras".equals(items.get(i).getName()))
-                            {
-                                items.get(i).setQuality(items.get(i).getQuality() - 1);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        items.get(i).setQuality(items.get(i).getQuality() - items.get(i).getQuality());
-                    }
-                }
-                else
-                {
-                    if (items.get(i).getQuality() < 50)
-                    {
-                        items.get(i).setQuality(items.get(i).getQuality() + 1);
-                    }
-                }
-            }
+            System.out.println("After: ");
+            printItemState(item);
+            System.out.println("------");
         }
+    }
+
+    private static void printItemState(Item item) {
+        System.out.printf("Item name: %s\t Item Sold In: %d days\t Item quality is: %d \n",
+            item.getName(), item.getSellIn(), item.getQuality());
     }
 
 }

@@ -31,6 +31,15 @@ A solution to the SuperMarketPlusPlusExercise
    * I wlil be adding a missing test case for Sulfaras where the quality should not exceed 80
 
 ## Step 7
-   *   
    * I will be removing the business case for the AgedBrie and BackStagePasses Updaters which enforces that quality does not fall below 0, the business requirements does not state that regular items will decrease in quality so this edge case is not required.
    
+## Step 8
+   * Ideally, I would move the functionality of the "updateQuality" method into a seperate class which can be tested. As it is, testing it would require powermock of which, designing the way it is called would be a better solution.
+   * Therefore, I will be replacing all the nested if loops in the "updateQuality" method with a simple for loop which uses the Updater interface and it's implementations to update items.
+   * I added one more item to the list to test if an Organic Banana is updated according to the specified business requirement.
+   * I removed the SupermarketPlusPlusTest class as this serves no purpose for now.
+   * Unfortunately, this means testing the result using the console or a logging framework.
+   * Also, replacing the old code in the "updateQuality" method rather than creating another method is appropriate because the old code is still available in the git repository. In a worst-scenario, it can be checked out and reused.
+
+## step 9
+   * I noticed that the Item class lacks proper encapsulation (the field are accessible publicly) but I chose not to use them directly as there proper way to access an object and it state should be through it's getters and setters. Ideally, there should be properly encapsulated but the business requirement does not permit any modifications.
